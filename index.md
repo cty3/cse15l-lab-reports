@@ -6,9 +6,9 @@
 
 ![Image](https://images.immediate.co.uk/production/volatile/sites/23/2014/10/GettyImages-521375354-a04d423.jpg?quality=90&resize=768%2C574)
 
-* lst
-* lst
-* lst
+* fluffy
+* snow
+* leopard!
 
 1. one
 2. two
