@@ -11,7 +11,7 @@
 
 * Go to the *Terminal* tab of VSCode and click on *New Terminal*. Enter the secure shell command. Mine looks like this 👇
 
-`$ ssh cs15lwi22ajv@ieng6.ucsd.edu`
+    `$ ssh cs15lwi22ajv@ieng6.ucsd.edu`
 * Then enter your passwords. Hopefully you'll get an out put like this 👇
 
 ![Image](step2.png)
@@ -37,7 +37,7 @@ class WhereAmI {
 }
 ```
 * Don't log in yet! On the client machine(your laptop/computer), enter code like this:
-`scp WhereAmI.java cs15lwi22ajv@ieng6.ucsd.edu:~/`. Theh enter your password.
+`scp WhereAmI.java cs15lwi22ajv@ieng6.ucsd.edu:~/`. Then enter your password.
 * Log into *ieng6* with `ssh` again. 
 * Use `ls`. WhereAmI.java should be in your directory right now.
 
