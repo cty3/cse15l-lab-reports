@@ -57,6 +57,6 @@ class WhereAmI {
 * Use the arrows to go back to the commands that I’ve just used.
 * Write a command in quotes after `ssh` to directly run on the remote server and log out. 
 * Use semicolons to run multiple commands on the same line.
-* As we can see in the screenshot, if I log in to my account, call ls and pwd, and then log out, I need to perform 31+1+2+1+3+1+4+1=44 keystrokes. To save time, I used the up arrow to restore the ssh command(1 keystroke) and "ls; pwd"(9 keystrokes), and pressed return(1 keystroke) to run it. I ended up using 1+9+1=11 keystrokes and saving 44-11=33 keystrokes. 
+* As we can see in the screenshot, if I log in to my account, call ls and pwd, and then log out, I need to perform 31+1+2+1+3+1+4+1=44 keystrokes. To save time, I used the up arrow to restore the ssh command(1 keystroke) and printed "ls; pwd"(9 keystrokes), and pressed return(1 keystroke) to run it. I ended up using 1+9+1=11 keystrokes and saving 44-11=33 keystrokes. 
 
 ![Image](step6rev.png)
