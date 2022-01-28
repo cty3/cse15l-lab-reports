@@ -26,4 +26,4 @@
 * The symptom looks like this in the output👇
 
 ![Image](labreport2-6.png)
-* Although it may seem not clear in the screenshot, I used the List.of() function to creat a temporary ArrayList in accrodance with the output of getLinks(). The bug in this case was that in the beginning my expected value is an Array, and the symptom was that the test failed. The failure-inducing input is just running the test in command line. By using the List.of() function, I resolved the error and ran the test successfully.
+* Although it may seem not clear in the screenshot, I used the List.of() function to creat a temporary ArrayList in accrodance with the output of getLinks(). The bug in this case was that in the beginning my expected value is an Array, and the symptom was that the test failed. The failure-inducing input is just running the test in command line and returning an ArrayList through getLinks(). By using the List.of() function, I resolved the error and ran the test successfully.
