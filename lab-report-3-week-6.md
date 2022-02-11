@@ -19,4 +19,5 @@
 
 * I used `scp labreport3-1.png irene15l:~/` to copy the file to my account.
 * I then logged into my account and entered `ls` to check if the file is successfully copied into my account.
+
 ![Image](labreport3-4.png)
