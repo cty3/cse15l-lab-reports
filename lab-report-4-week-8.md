@@ -7,7 +7,7 @@
 
 > **Snippet 1**
 
-* I used VScode preview to decide what it should produce: url.com, `google.com, google.com, ucsd.edu
+* I used VScode preview to decide what it should produce: `google.com, google.com, ucsd.edu
 
 **My implementation**
 * Code in the test
@@ -16,7 +16,7 @@
 public void testSnippet1() throws IOException {
     Path filename = Path.of("snippet1.md");
     String contents = Files.readString(filename);
-    assertEquals(List.of("url.com", "`google.com", "google.com", "ucsd.edu"), MarkdownParse.getLinks(contents));
+    assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), MarkdownParse.getLinks(contents));
     }
 ```
 * My implementation didn't pass the test.
@@ -24,12 +24,7 @@ public void testSnippet1() throws IOException {
 
 ![Image](labreport4-1.png)
 
-* There is a small code change that can make my program work for snippet 1 and all related cases that use inline code with backticks. When checking for brackets and parentheses with stuff between them, and empty links, I modified the if statement to make it check that char before open parenthesis is ']' and successfully solved the error caused by close brackest interrupted by backsticks.
-```
-if (markdown.charAt(openParen-1)==']' && openParen + 1 != closeParen) {
-    toReturn.add(markdown.substring(openParen + 1, closeParen));
-}
-```
+* I would need more than 10 lines to fix it, as the influence of ticks appear to vary for parenthesis and brackets. I might need to define the order of priority/importance of ticks, brackets, and parentheses. The program will therefore be able to return the correct list of links, of which url.com doesn't appear when the content in its brackets are interrupted by the ticks.
 
 **The implementation I reviewed**
 * Code in the test
@@ -39,14 +34,17 @@ public void testSnippet1() throws IOException {
     Path filename = Path.of("snippet1.md");
     String contents = Files.readString(filename);
     String[] contentsArray = contents.split("\n");
-    assertEquals(MarkdownParse.getLinks(contentsArray), List.of("url.com", "`google.com", "google.com", "ucsd.edu"));
+    assertEquals(MarkdownParse.getLinks(contentsArray), List.of("`google.com", "google.com", "ucsd.edu"));
 }
 ```
-* The implementation I reviewed passed the test.
+* The implementation I reviewed didn't pass the test.
+* Output: 
+
+![Image](labreport4-extra.png)
 
 > **Snippet 2**
 
-* I used VScode preview to decide what it should produce: a.com, b.com, a.com(()), example.com
+* I used VScode preview to decide what it should produce: a.com, a.com(()), example.com
 
 **My implementation**
 * Code in the test
@@ -55,7 +53,7 @@ public void testSnippet1() throws IOException {
  public void testSnippet2() throws IOException {
     Path filename = Path.of("snippet2.md");
     String contents = Files.readString(filename);
-    assertEquals(List.of("a.com", "b.com", "a.com(())", "example.com"), MarkdownParse.getLinks(contents));
+    assertEquals(List.of("a.com", "a.com(())", "example.com"), MarkdownParse.getLinks(contents));
 }
 ```
 
@@ -64,7 +62,7 @@ public void testSnippet1() throws IOException {
 
 ![Image](labreport4-2.png)
 
-* It's possible to make my program work for a nested parenthesized url, as I'll only need to make sure that getLinks return the content between first open paren after the closing bracket and the last closing paren before the next open bracket. However, I think the nested link is tricky, as we might need to introduce some parenthesis&bracket pairing function to fix the code.
+* It's possible to make my program work for a nested parenthesized url with a change that takes fewer than 10 lines.I'll need to make sure that getLinks return the content between first open paren after the closing bracket and the last closing paren before the next open bracket. 
 
 **The implementation I reviewed**
 * Code in the test
@@ -74,7 +72,7 @@ public void testSnippet2() throws IOException {
     Path filename = Path.of("snippet2.md");
     String contents = Files.readString(filename);
     String[] contentsArray = contents.split("\n");
-    assertEquals(List.of("a.com", "b.com", "a.com(())", "example.com"), MarkdownParse.getLinks(contentsArray));
+    assertEquals(List.of("a.com", "a.com(())", "example.com"), MarkdownParse.getLinks(contentsArray));
 }
 ```
 * The implementation I reviewed didn't pass the test.
