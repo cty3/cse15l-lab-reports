@@ -34,6 +34,6 @@
 
 * I think the provided implementations is correct. The program should return an empty list, since brackets and parentheses are interrupted by angle brackets.
 
-* My mplementation is incorrect. The bug is that it doesn't take care of the case in which a pair of angle brackets interrupt the link.
+* My implementation is incorrect. The bug is that it doesn't take care of the case in which a pair of angle brackets interrupt the link.
 
 * The fix should also be in the getLinks method, as shown in the previous test. After looking for brackets, it should also look for angle brackets and stop parsing the content in the following parenthesis if the angle brackets present.
