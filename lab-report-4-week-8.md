@@ -3,7 +3,7 @@
 
 [The implementation I reviewed can be found here](https://github.com/maotcha/markdown-parse)
 
-*Since the implementation I reviewed changed the header of the getLinks method, my methods for both implementations would differ for each snippet
+* Since the implementation I reviewed changed the header of the getLinks method, my methods for both implementations would differ for each snippet
 
 > **Snippet 1**
 
